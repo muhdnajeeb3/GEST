@@ -13,7 +13,7 @@
     <div class="container mx-auto">
       
         <section class="flex flex-wrap lg:flex-nowrap justify-center h-screen relative">
-            <div class="my-auto font-poppins text-gray-200 text-center lg:text-left">
+            <div class="my-auto font-poppins text-gray-200 text-center lg:text-left margin">
                 <h1 class="font-medium text-5xl py-3">The website is in <br> maintenace mode</h1>
                 <p class="lg:w-5/6">we have done all the technical improvements and will back very soon. Thank you for your patience!</p>
 
@@ -40,4 +40,15 @@
     input:focus{
         outline: none;
     }
+    @media only screen and (max-width: 600px){
+    .margin{
+        margin: 16px;
+    }
+    .text-5xl{
+        font-size: 31px;
+    font-weight: 900;
+    text-transform: capitalize;
+    margin-top: 138px;
+    }
+}
 </style>

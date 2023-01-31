@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Under Maintenance</title>
 
@@ -18,6 +19,81 @@
 
 
     </div>
+    <!-- <div class="form">
+        <form class="row contact_form" action="" method="post" id="submit-form" novalidate="novalidate">
+
+        <div class="title">Contact Us</div>
+        
+        <div class="form-group">
+          <input id="firstname" class="form-control" type="text" placeholder=" " />
+
+          <div class="cut"></div>
+          <label for="firstname" class="placeholder">First name</label>
+        </div>
+        <div class="input-container ic2">
+          <input id="email" class="input" type="email" placeholder=" " />
+          <div class="cut"></div>
+          <label for="email" class="placeholder">Email</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="text" class="input" type="text" placeholder=" " />
+          <div class="cut cut-short"></div>
+          <label for="subject" class="placeholder">Subject</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="message" class="input" type="text" placeholder=" " />
+          <div class="cut cut-short"></div>
+          <label for="Message" class="placeholder">Enter Message</>
+        </div>
+        <button type="submit" value=""submit class="submit">Send Message</button>
+    </form>
+
+    </div> -->
+    <div class="col-lg-9">
+        <form class="row contact_form" action="" method="post" id="submit-form" novalidate="novalidate">
+            <div>
+                <span class="contactus">Contact Us</span>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12 text-right">
+                <button type="submit" value="submit" class="btn submit_btn">Send Message</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbz0NP4umF3MUdQNojosXS3rJ3HzMy-rsNGVpUTw03sWsQyBPpZPh0R_kG0BM8KsBL6X/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>
@@ -31,9 +107,68 @@
 
 
     }
+    .col-lg-9{
+        border: 2px black solid;
+        background-color: #15172b;
+        display: flex;
+        flex-direction: column;
+        width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        margin-bottom: 40px ;
+        border-radius: 20px;
+  box-sizing: border-box;
+
+        padding: 20px;
+        /* height: 100vh; */
+    }
+    /* heading */
+    .contactus{
+        font-weight: 600;
+        font-size: 25px;
+        color: #fff;
+       
+    }
+    /* form group */
+    .form-control{
+        gap: 20px;
+        margin-top: 20px;
+        width: 350px;
+        height: 50px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    /* button */
+    .btn.submit_btn{
+        border: 5px green solid;
+        background: green;
+        font-size: 18px;
+        font-weight: 600;
+        display: grid;
+        justify-content: start;
+        margin-top: 20px;
+        border-radius: 20px;
+        padding: 10px;
+        color: #fff;
+        cursor: pointer;
+    }
+    body {
+  align-items: center;
+  background-color: lightgrey;
+  /* display: flex; */
+  /* justify-content: center; */
+  height: 100vh;
+}
+
+
+
     @media only screen and (max-width: 600px){
     .margin{
         margin: 16px;
+    }
+    .form{
+        width: 420px;
     }
     .text-5xl{
         font-size: 31px;
@@ -41,5 +176,14 @@
     text-transform: capitalize;
     margin-top: 138px;
     }
+    @media only screen and (max-width: 500px){
+        .col-lg-9{
+        width: 350px;
+    }
+    .form-control{
+        width: 300px;
+    }
+    }
+
 }
 </style>

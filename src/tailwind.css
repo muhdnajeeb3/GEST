@@ -13,10 +13,11 @@
 /* .image1{
     animation: moveY 2s infinite;
 } */
-body{
+.body{
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr;
+    background: darkblue;
 }
 .gestimages{
     /* height: 100vh; */
